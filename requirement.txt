@@ -1,5 +1,5 @@
 streamlit==0.89.0
-easyocr==1.4.1
+import easyocr
 opencv-python-headless==4.5.3.56
 pillow==8.4.0
 numpy==1.21.3
