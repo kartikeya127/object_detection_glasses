@@ -1,5 +1,5 @@
 import streamlit as st
-import easyocr
+import easyocr as ocr
 from PIL import Image, ImageDraw
 import numpy as np
 import cv2
@@ -8,7 +8,7 @@ import os
 # Function to perform glasses detection using EasyOCR
 def detect_glasses(image):
     # Load the EasyOCR reader
-    reader = easyocr.Reader(['en'])
+    reader = ocr.Reader(['en'])
 
     # Perform text detection and recognition
     result = reader.readtext(image)
@@ -71,7 +71,7 @@ def main():
 
         # OCR processing
         # Initialize OCR reader
-        reader = easyocr.Reader(['en', 'ar'], gpu=False)
+        reader = ocr.Reader(['en', 'ar'], gpu=False)
 
         # Create output folder for processed images
         output_folder = 'ocr_results'
